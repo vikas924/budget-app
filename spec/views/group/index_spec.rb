@@ -8,9 +8,9 @@ RSpec.describe 'groups/index.html.erb', type: :view do
     @cat1.save
     @cat2 = Group.new(author: @user, name: 'Zara', icon: 'icon2_url')
     @cat2.save
-    @entity1 = Entity.create(author: @user, name: 'Shirt', category: @cat2, amount: 35)
-    @entity2 = Entity.create(author: @user, name: 'Shoes', category: @cat1, amount: 120)
-    @entity3 = Entity.create(author: @user, name: 'Shoes', category: @cat1, amount: 20)
+    @payment1 = Payment.create(author: @user, name: 'Shirt', category: @cat2, amount: 35)
+    @payment2 = Payment.create(author: @user, name: 'Shoes', category: @cat1, amount: 120)
+    @payment3 = Payment.create(author: @user, name: 'Shoes', category: @cat1, amount: 20)
     assign(:groups, Group.all)
     render
   end

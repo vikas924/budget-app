@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe 'entities/index.html.erb', type: :view do
+RSpec.describe 'payments/index.html.erb', type: :view do
   before do
     @user = User.new(name: 'Bianca', email: 'b@example.com', password: '123456')
     @user.save
     @group = Group.new(author: @user, name: 'Nike', icon: 'icon_url')
     @group.save
-    @entity2 = Entity.create(author: @user, name: 'Shoes', category: @group, amount: 120)
-    @entity3 = Entity.create(author: @user, name: 'Shoes black', category: @group, amount: 20)
+    @payment2 = Payment.create(author: @user, name: 'Shoes', category: @group, amount: 120)
+    @payment3 = Payment.create(author: @user, name: 'Shoes black', category: @group, amount: 20)
     assign(:group, @group)
-    assign(:entities, Entity.all)
+    assign(:payments, Payment.all)
     render
   end
 

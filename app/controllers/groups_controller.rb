@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.includes(:entities).where(author: current_user.id)
+    @groups = Group.includes(:payments).where(author: current_user.id)
   end
 
   def new

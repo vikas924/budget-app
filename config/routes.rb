@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :groups, only: [:index, :new, :create] do  
-    resources :entities, only: [:index, :new, :create] 
+    resources :payments, only: [:index, :new, :create] 
   end
 end

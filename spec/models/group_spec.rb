@@ -5,7 +5,7 @@ RSpec.describe Group, type: :model do
     @user = User.create!(name: 'Example User', email: 'user@example.com', password: 'password',
                          password_confirmation: 'password')
     @group = Group.create!(name: 'Example Group', author: @user)
-    @entity = Entity.create!(name: 'Example Entity', amount: 100, category: @group, author: @user)
+    @entity = Payment.create!(name: 'Example Entity', amount: 100, category: @group, author: @user)
   end
 
   it 'is valid with valid attributes' do

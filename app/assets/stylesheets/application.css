@@ -20,13 +20,31 @@
   --grey: #434b54;
 }
 
+@font-face {
+  font-family: "proxima-nova";
+  src: url("/assets/fonts/Fontspring-DEMO-proximanova-regularit.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: proxima-nova, sans-serif;
   text-decoration: none;
   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: proxima-nova, sans-serif;
+  color: black;
 }
 
 a {

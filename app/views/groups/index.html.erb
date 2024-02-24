@@ -12,7 +12,7 @@
     <div class='c-container'>
         <ul class='c-ul'>
             <% @groups.each do |group| %>
-                <%= link_to  group_entities_path(group), class: "c-link" do %>
+                <%= link_to  group_payments_path(group), class: "c-link" do %>
                     <li class='c-li'>
                         <div class='c-img' style="background-image: url('<%= group.icon %>');" >
                         </div>
