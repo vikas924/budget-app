@@ -79,7 +79,7 @@ bundle install
 To test, run:
 
 ```
-rspec
+rspec spec --format documentation
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
