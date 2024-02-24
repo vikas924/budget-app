@@ -22,7 +22,8 @@
 
 @font-face {
   font-family: "proxima-nova";
-  src: url("/assets/fonts/Fontspring-DEMO-proximanova-regularit.otf")
+  src:
+    url("/assets/fonts/Fontspring-DEMO-proximanova-regularit.otf")
     format("opentype");
   font-weight: normal;
   font-style: normal;
