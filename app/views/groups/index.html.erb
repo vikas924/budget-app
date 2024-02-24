@@ -1,0 +1,31 @@
+<section class='page'>
+    <nav class="navbar">
+        <ul class='s-ul'>
+            <li><p><%= link_to authenticated_root_path do %><p class='back'>&#x2039;</p><% end %></p></li>
+            <li><p>Categories</p> </li>
+            <li> 
+                <%= button_to "Out", destroy_user_session_path, method: :delete, class: "btn-out" %>
+            </li>
+        </ul>
+    </nav>
+
+    <div class='c-container'>
+        <ul class='c-ul'>
+            <% @groups.each do |group| %>
+                <%= link_to  group_entities_path(group), class: "c-link" do %>
+                    <li class='c-li'>
+                        <div class='c-img' style="background-image: url('<%= group.icon %>');" >
+                        </div>
+                        <div class='c-info'>
+                            <div class='c-name'><p><%= group.name %></p></div>
+                            <div class='c-amount'><p>$ <%= group.total_amount%></p></div>
+                        </div>
+                    </li>
+                <% end %>    
+            <% end %>
+        </ul>
+    </div>
+    <div class='c-new'>
+        <%= link_to 'Create new category', new_group_path, class: 'green-btn' %>
+    </div>
+</section>

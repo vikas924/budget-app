@@ -1,0 +1,39 @@
+<section class='page'>
+  <nav class="navbar">
+    <ul class='s-ul'>
+      <li><p><%= link_to group_entities_path(@group) do %><p class='back'>&#x2039;</p><% end %></p></li>
+      <li><p>Transaction</p> </li>
+      <li>
+        <%= button_to "Out", destroy_user_session_path, method: :delete, class: "btn-out" %>
+      </li>
+    </ul>
+  </nav>
+  <h2>Create new Transaction</h2>
+  <%= form_with(model: [@group, @entity], local: true, html: {class: 'form'}) do |f| %>
+    <div class="field">
+    <%= f.text_field :name, autofocus: true, class: 'field-s',placeholder: 'Name', autocomplete: "name", required: true %>
+    </div>
+    <div class="field">
+    <%= f.number_field :amount, autofocus: true, class: 'field-s',placeholder: 'Amount', autocomplete: "amount", required: true %>
+    </div>
+    <select aria-label="Default select example" name="category_id" class='field-s' required= true>
+        <option selected value='0' >--Select Category--</option>
+        <% @groups.each do |g| %>
+               <option value="<%= g.id %>"><%= g.name %></option>
+        <% end %>
+    </select>
+
+    <div class='s-actions'>
+      <div class="actions">
+        <%= f.submit "Save", class: 'actions-btn' %>
+      </div>
+    </div>
+  <% end %>
+  <% if flash[:error] %>
+  <div class="alert alert-danger">
+    <% flash[:error].each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+</section>

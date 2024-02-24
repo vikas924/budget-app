@@ -1,0 +1,85 @@
+.session,
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+  height: 100vh;
+  width: 100%;
+  gap: 1em;
+  color: #828282;
+}
+
+.navbar {
+  padding: 0 0.5em;
+  background-color: var(--blue);
+  width: 100%;
+  color: white;
+  font-size: 1.2em;
+}
+
+.s-ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  gap: 4px;
+}
+
+.back {
+  font-size: 2em;
+  padding: 0;
+  margin-bottom: 7px;
+}
+
+/* --- Session form --- */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4px;
+}
+
+.field {
+  width: 100%;
+  text-align: center;
+}
+
+.field-s {
+  height: 3em;
+  border: none;
+  width: 100%;
+  font-size: 1em;
+  padding-left: 5px;
+}
+
+.field-s:focus {
+  outline: 0;
+}
+
+.s-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.actions-btn {
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  background-color: var(--blue);
+  border: none;
+  cursor: pointer;
+}
+
+.actions-btn:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

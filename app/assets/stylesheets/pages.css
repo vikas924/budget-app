@@ -1,0 +1,97 @@
+.btn-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3em;
+  background-color: var(--blue);
+  color: white;
+  font-size: 0.8em;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.5em 0 0.5em;
+}
+
+.btn-out:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.c-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.8em;
+}
+
+.c-link {
+  width: 90%;
+}
+
+.c-li {
+  display: flex;
+  height: 6em;
+  border: none;
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 1em;
+  padding: 0.5em;
+  background-color: white;
+  gap: 0.5em;
+}
+
+.c-li:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.c-info {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: right;
+  justify-content: space-between;
+}
+
+.c-img {
+  width: 6.5em;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.c-new {
+  display: flex;
+  width: 100%;
+  height: 5em;
+  background-color: var(--green);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 1px;
+  padding: 0 0.5em 0 0.5em;
+}
+
+.green-btn {
+  width: 90%;
+  padding: 0.5em 1em;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  background-color: var(--green);
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.green-btn:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
