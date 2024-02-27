@@ -1,7 +1,7 @@
 class PaymentsController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
-    @payments = Payment.all.where(category_id: params[:group_id])
+    @payments = @group.payments.where(author_id: current_user).order(created_at: :desc)
   end
 
   def new
@@ -16,7 +16,10 @@ class PaymentsController < ApplicationController
       redirect_to new_group_payment_path(@group), notice: 'Category Not selected. Transaction not created'
     else
       @category = Group.find(params[:category_id])
-      @payment = @category.payments.build(entity_params.merge(author_id: current_user.id, category: @category))
+      name = entity_params[:name]
+      amount = entity_params[:amount]
+      @payment = current_user.payments.build(name:, amount:)
+      @category.payments << @payment
 
       if @payment.save
         redirect_to group_payments_path(@category), notice: 'Payment was successfully created.'
