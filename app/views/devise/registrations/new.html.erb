@@ -1,0 +1,35 @@
+<section class="session">
+  <nav class="navbar">
+    <ul class='s-ul'>
+    <li><%= link_to unauthenticated_root_path do %><p class='back'>&#x2039;</p><% end %></li>
+      <li><p>REGISTER</p> </li>
+      <li><p></p></li>
+    </ul>
+  </nav>
+
+  <%= form_for(resource, as: resource_name, :html => {:class => 'form'}, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, class: 'field-s',placeholder: 'Full Name', autocomplete: "name" %>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, class: 'field-s',placeholder: 'Email', autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", class: 'field-s', placeholder: 'Password ( 6 characters minimum)' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, class: 'field-s', autocomplete: "new-password", placeholder: 'Password confirmation' %>
+    </div>
+    <div class='s-actions'>
+      <div class="actions">
+        <%= f.submit "Sign up", :class => 'actions-btn' %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</section>

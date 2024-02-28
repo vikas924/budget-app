@@ -1,0 +1,25 @@
+<section class='page'>
+  <nav class="navbar">
+    <ul class='s-ul'>
+      <li><p><%= link_to authenticated_root_path do %><p class='back'>&#x2039;</p><% end %></p></li>
+      <li><p>Categories</p> </li>
+      <li>
+        <%= button_to "Out", destroy_user_session_path, method: :delete, class: "btn-out" %>
+      </li>
+    </ul>
+  </nav>
+  <h2>Create new category</h2>
+  <%= form_with(model: @group, local: true, html: {class: 'form'}) do |f| %>
+    <div class="field">
+    <%= f.text_field :name, autofocus: true, class: 'field-s',placeholder: 'Full Name', autocomplete: "name", required: true %>
+    </div>
+    <div class="field">
+    <%= f.text_field :icon, autofocus: true, class: 'field-s',placeholder: 'Icon URL', autocomplete: "icon", required: true %>
+    </div>
+    <div class='s-actions'>
+      <div class="actions">
+        <%= f.submit "Save", class: 'actions-btn' %>
+      </div>
+    </div>
+  <% end %>
+</section>

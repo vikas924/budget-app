@@ -1,0 +1,29 @@
+<section class='page'>
+    <nav class="navbar">
+        <ul class='s-ul'>
+            <li><p><%= link_to authenticated_root_path do %><p class='back'>&#x2039;</p><% end %></p></li>
+            <li><p><%=@group.name %></p> </li>
+            <li> 
+                <%= button_to "Out", destroy_user_session_path, method: :delete, class: "btn-out" %>
+            </li>
+        </ul>
+    </nav>
+
+    <div class='c-container'>
+        <ul class='c-ul'>
+            <% @payments.each do |payment| %>
+                    <li class='c-li'>
+                        <div class='c-img' >
+                        </div>
+                        <div class='c-info'>
+                            <div class='c-name'><p><%= payment.name %></p></div>
+                            <div class='c-amount'><p>$ <%= payment.amount %></p></div>
+                        </div>
+                    </li>
+            <% end %>    
+        </ul>
+    </div>
+    <div class='c-new'>
+        <%= link_to 'Create new transaction', new_group_payment_path(@group), class: 'green-btn' %>
+    </div>
+</section>

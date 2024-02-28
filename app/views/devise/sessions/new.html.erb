@@ -1,0 +1,34 @@
+<section class="session">
+  <nav class="navbar">
+    <ul class='s-ul'>
+    <li><%= link_to unauthenticated_root_path do %><p class='back'>&#x2039;</p><% end %></li>
+      <li><p>LOG IN</p> </li>
+      <li><p></p></li>
+    </ul>
+  </nav>
+
+    <%= form_for(resource, as: resource_name, :html => {:class => 'form'}, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.email_field :email, class: 'field-s',placeholder: 'Email', autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, class: 'field-s',placeholder: 'Password', autocomplete: "current-password" %>
+      </div>
+
+    <div class='s-actions'>
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Log in", :class => 'actions-btn' %>
+      </div>
+      </div>
+    <% end %>
+      <%= render "devise/shared/links" %>
+
+</section>
